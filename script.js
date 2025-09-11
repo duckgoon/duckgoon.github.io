@@ -3,10 +3,10 @@ const siteData = {
   title: "My JavaScript Website",
   nav: ["Home", "About", "Contact", "Projects", "Blog", "Gallery",  "FAQ", "Support", "Terms", "Privacy"],
   content: {
+    Projects: "Here are some of our projects.",
     Home: "Welcome to the home page!",
     About: "We are a team of developers building cool things.",
     Contact: "You can reach us at contact@example.com.",
-    Projects: "Here are some of our projects.",
     Blog: "Read our latest blog posts.",
     Gallery: "Check out our gallery of images.",            
     FAQ: "Frequently Asked Questions.",
