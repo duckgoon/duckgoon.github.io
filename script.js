@@ -3,7 +3,17 @@ const siteData = {
   title: "My JavaScript Website",
   nav: ["Projects", "Programming Blog", "BA English Portfolio",  "Pictures worth a thousand words", "Research Articles", "Terms", "Privacy"],
   content: {
-    Projects: "Here are some of our projects.",
+    Projects: 
+      {
+      "<h1>Here are some of our projects.</h1>"
+      "<h2>Java Projects</h2>",
+      "<h2>C++ Projects</h2>",
+      "<h2>Embedded Device Projects</h2>",
+      "<h2>Research Projects and Articles</h2>",
+      "<h2>Mobile App Development</h2>",
+      "<h2>Full Stack Services Projects</h2>"
+  }
+    ,
     Programming_Blog: "My daily dose of software lectures",
     BA_English_Portfolio: "Writing everyday - poems, prose, play, journal, arts.",
     Pictures: "Photos taken by me",
