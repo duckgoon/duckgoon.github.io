@@ -1,18 +1,14 @@
 // Sample data (could come from an API)
 const siteData = {
   title: "My JavaScript Website",
-  nav: ["Home", "About", "Contact", "Projects", "Blog", "Gallery",  "FAQ", "Support", "Terms", "Privacy"],
+  nav: ["Projects", "Programming Blog", "BA English Portfolio",  "Pictures worth a thousand words", "Terms", "Privacy"],
   content: {
     Projects: "Here are some of our projects.",
-    Home: "Welcome to the home page!",
-    About: "We are a team of developers building cool things.",
-    Contact: "You can reach us at contact@example.com.",
-    Blog: "Read our latest blog posts.",
-    Gallery: "Check out our gallery of images.",            
-    FAQ: "Frequently Asked Questions.",
-    Support: "Get support here.",
-    Terms: "Terms and conditions.",
-    Privacy: "Our privacy policy."  
+    Programming_Blog: "My daily dose of software lectures",
+    BA_English_Portfolio: "Writing everyday - poems, prose, play, journal, arts.",
+    Pictures: "Photos taken by me",
+    Terms: "No terms, you could send me a message if you intend to copy anything.",
+    Privacy: "For educational purposes, this site uses cookies."
   }
 };
 
