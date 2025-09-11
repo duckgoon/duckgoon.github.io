@@ -5,7 +5,7 @@ const siteData = {
   content: {
     Projects: 
       {
-      "<h1>Here are some of our projects.</h1>"
+      "<h1>Here are some of our projects...</h1>"
       "<h2>Java Projects</h2>",
       "<h2>C++ Projects</h2>",
       "<h2>Embedded Device Projects</h2>",
