@@ -2,14 +2,158 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>JS Rendered Website - Muhibur Rahim</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header .brand {
+      font-weight: bold;
+      font-size: 1.25rem;
+    }
+    nav {
+      display: flex;
+      gap: 0.5rem;
+    }
+    nav button {
+      border: none;
+      background: none;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    nav button.active {
+      background: #0f172a;
+      color: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    nav button:hover:not(.active) {
+      background: #f1f5f9;
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 1rem;
+    }
+    section {
+      display: none;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+    section.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="brand">Your Name</div>
+    <nav>
+      <button class="active" data-tab="home">Home</button>
+      <button data-tab="about">About</button>
+      <button data-tab="portfolio">Portfolio</button>
+      <button data-tab="blog">Blog</button>
+      <button data-tab="contact">Contact</button>
+    </nav>
+  </header>
 
-  <div id="app">Loading...</div>
+  <main>
+    <section id="home" class="active">
+      <h2>Home</h2>
+      <p>Hello! I'm a developer and designer who builds simple, clean, and functional web experiences.</p>
+    </section>
 
-  <script src="script.js"></script>
+    <section id="about">
+      <h2>About</h2>
+      <p>I focus on frontend development, UX, and accessibility. I enjoy building products that people love to use.</p>
+    </section>
+
+    <section id="portfolio">
+      <h2>Portfolio</h2>
+      <ul>
+        <li>Project One – A cool project description.</li>
+        <li>Project Two – Another neat project.</li>
+        <li>Project Three – Something amazing.</li>
+      </ul>
+    </section>
+
+    <section id="blog">
+      <h2>Blog</h2>
+      <p>Coming soon: thoughts on development, design, and creativity.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <form>
+        <label>
+          Name<br>
+          <input type="text" placeholder="Your name" style="width:100%; padding:0.5rem; margin-top:0.25rem;">
+        </label><br><br>
+        <label>
+          Email<br>
+          <input type="email" placeholder="you@example.com" style="width:100%; padding:0.5rem; margin-top:0.25rem;">
+        </label><br><br>
+        <label>
+          Message<br>
+          <textarea rows="4" placeholder="Write your message..." style="width:100%; padding:0.5rem; margin-top:0.25rem;"></textarea>
+        </label><br><br>
+        <button type="submit" style="background:#0f172a; color:white; border:none; padding:0.5rem 1rem; border-radius:6px; cursor:pointer;">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name — Built with ❤️
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll("nav button");
+    const sections = document.querySelectorAll("main section");
+
+    buttons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        // deactivate all
+        buttons.forEach(b => b.classList.remove("active"));
+        sections.forEach(s => s.classList.remove("active"));
+
+        // activate clicked
+        btn.classList.add("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
